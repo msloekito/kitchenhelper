@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html ng-app="myCalculator">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/helper.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script type="text/javascript" src="assets/angular.min.js"></script>
+		<script type="text/javascript" src="assets/helper.js"></script>
+		<title>KitchenHelper</title>
+	</head>
+	<body>
+	
+		<div id="myCalculator" ng-controller="CalculatorController">
+		
+			<main>
+
+				<div class="container-fluid">
+				<div class="row">
+
+					<section class="tsp">
+						<div class="col-md-4 tsp">
+							<h4>Teaspoon</h4>
+							<p>{{tsp}}</p>
+						</div>
+					</section>
+					
+					<section class="tbsp">
+						<div class="col-md-4 tbsp">
+							<h4>Tablespoon</h4>
+							<p>{{tbsp}}</p>
+						</div>
+					</section>
+
+					<section class="cup">
+						<div class="col-md-4 cup">
+							<h4>Cup</h4>
+							<p>{{cup}}</p>
+						</div>
+					</section>
+
+				</div>
+				</div>
+
+			</main>
+			<form>
+				<div class="container-fluid">
+				
+					<div class="row formsection">
+						
+						<section class="amount">
+						<div class="col-md-4">
+							<h4>Amount</h4>
+							<p>Original amount</p>
+							<input type="number" ng-change="calculate()" ng-model="current_amount" value={{current_amount}}>
+						</div>	
+						</section>
+				
+						<section class="unit">
+						<div class="col-md-4">
+							<h4>Unit</h4>
+							<p>Original unit of measurement</p>
+							<select ng-change="calculate()" ng-model="current_unit" ng-options="o as o for o in unit_options">
+							</select>
+						</div>
+						</section>
+							
+						<section class="serving">	
+						<div class="col-md-4">
+							<h4>Servings</h4>
+							<p>How many servings are you making?</p>
+							<input type="number" ng-change="calculate()" ng-model="current_serving" value={{current_serving}}> servings					
+						</div>
+						</section>
+
+					</div>
+				
+				</div>
+
+			</form>
+		</div>
+	</body>
+</html>
